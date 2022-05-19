@@ -5,6 +5,9 @@ import App from './layout/App';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Register from './layout/Register';
 import Login from './layout/Login';
+import createGlobalStyle from './assets/styles/global';
+
+const GlobalStyle = createGlobalStyle;
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,6 +22,7 @@ root.render(
       </Routes>
     
     </BrowserRouter>
+    <GlobalStyle/>
   </React.StrictMode>
 );
 
