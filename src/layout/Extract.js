@@ -18,17 +18,44 @@ const Ul = styled.ul`
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow-y: auto;
+  height: 100vh;
 
 `;
 
 const Li = styled.li`
   width: 100%;
   display: flex;
-  line-height: 100px;
-  justify-content: space-between;
+  height: 100px;
+  align-items: center;
+  justify-content: space-around; 
+  > div > * {
+    max-heigth: 25px;
+  }
+
+  > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    strong {
+      font-size: 1.5em;
+      margin-bottom: 5%;
+    }
+    span {
+      text-align: left;
+    }    
+  }
+  &:nth-child(odd) {
+    background: #eee;
+  }
+  >div:last-child {
+    font-size: 0.9rem;
+    font-weigth: bold;
+    color: #aaa;
+  }
+
 `;
 
-function Extract() {
+
 
 const img = (icone)=>{
     let retorno = ted;
@@ -44,22 +71,37 @@ const img = (icone)=>{
   return retorno;
 };
 
+const formatCurrency = (value)=>{
+  return new Intl.NumberFormat('pt-BR', {style:'currency', currency:'BRL'}).format(value);
+};
+
+const formatDate = (dateInput) => {
+  const date = new Date(dateInput);
+  const day = date.getDate() + 1;
+  const month = date.toLocaleDateString("pt-BR", { month: "short"});
+  return `${day} ${month.toLocaleUpperCase()}`;
+};
+
+function Extract() {
+
   return (
     <Container>
       <Banner background={true}>
-      <h1>Confira seu extrato</h1>
+        <h1>Confira seu extrato</h1>
       </Banner>
 
       <Banner>  
         <Ul>
           {ExtractData.map((item, index)=>(
             <Li key={index}>
-              <div><img src={ img(item.icone)} alt="operação"></img> </div>
+              <div><img src={img(item.icone)} alt="operação"></img> </div>
+            
               <div><strong> {item.operacao}</strong>
               {item.destinatario && <span>{item.destinatario} </span>}
-                <span>{item.valor}</span>
+                <span>{formatCurrency(item.valor)}</span>
               </div>
-              <div>{item.dataOperacao}</div>
+            
+              <div>{formatDate(item.dataOperacao)}</div>
             </Li>
           ))}
         </Ul>

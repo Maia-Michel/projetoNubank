@@ -1,37 +1,47 @@
-import { useReducer, useState } from "react";
+import { Children, useReducer, useState } from "react";
 //import './App.css';
 //import logo from '../assets/images/logo.svg';
 
 import styled from "styled-components";
-import Banner from "../components/Banner"
+import Banner from "../components/Banner";
 
 //import bannerBG from '../assets/images/bannerBG.png';
 
 const Container = styled.div`
   display: flex;
-  fieldset {
-    width: 60%;
+  fieldset:not(:nth-child(6)) {
+    min-height: 80px;
+    width: 80%;
     border: none;
   } 
 
+
+fieldset:nth-child(6) {
+  border: none;
+  width: 80%
+}
+
+> div:nth-child(2) {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  button {
+    width: 80%;
+    line-height: 50px;
+    border-radius: 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 2%;
+  }
+}
 `; 
-
-// const Banner = styled.div`
-//  width: 50%;
-//  height: 100vh;
-//  display: flex;
-//  flex-direction: column;
-//  justify-content: center;
-//  align-items: center;
-//  border: solid 1px red;
-//  background: ${(props) => props.background ? "url(" + props.background + ") #e5e5e5 " : "" } 20% 90% no-repeat;
-//  @media (max-width: 1278px) {
-//    background-size: 60%;
-//  }
-// `; 
-
-
-// function - só existe a partir desta linha 
 
 const formReducer = (state, event) => {
   return {
