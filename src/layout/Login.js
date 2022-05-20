@@ -3,7 +3,9 @@ import { useReducer, useState } from "react";
 //import logo from '../assets/images/logo.svg';
 
 import styled from "styled-components";
-import bannerBG from '../assets/images/bannerBG.png';
+import Banner from "../components/Banner"
+
+//import bannerBG from '../assets/images/bannerBG.png';
 
 const Container = styled.div`
   display: flex;
@@ -13,20 +15,6 @@ const Container = styled.div`
   } 
 
 `; 
-
-const Banner = styled.div`
-  width: 50%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: solid 1px red;
-  background: ${(props) => props.background ? "url(" + props.background + ") #e5e5e5 " : "" } 20% 90% no-repeat;
-  @media (max-width: 1278px) {
-    background-size: 60%;
-  }
-`;
 
 
 // function - só existe a partir desta linha 
@@ -62,8 +50,8 @@ const handleSubmit = (event) => {
 
   return (
     <Container>
-      <Banner background={bannerBG}>
-      <h1>Complete os campos ao lado para pedir sua Conta e Cartão de crédito</h1>
+      <Banner background={true}>
+      <h1>Faça Login</h1>
       </Banner>
       <Banner>  
 
