@@ -9,18 +9,11 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <nav style={{borderBottom:'solid 1px #333', paddingBottom: '1rem' }}>
-          <Link to="/register">Cadastro</Link>
-          <Link to="/register">Login</Link>
-          <Link to="/register">Extrato</Link>
+          <Link to="/register" className="App-Link">Cadastro</Link> |
+          <Link to="/login" className="App-Link">Login</Link> |
+          <Link to="/extract" className="App-Link">Extrato</Link>
         </nav>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      
       </header>
     </div>
   );

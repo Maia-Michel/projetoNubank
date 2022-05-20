@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Register from './layout/Register';
 import Login from './layout/Login';
 import createGlobalStyle from './assets/styles/global';
+import Extract from './layout/Extract';
 
 const GlobalStyle = createGlobalStyle;
 
@@ -18,6 +19,7 @@ root.render(
         <Route path="/" element={<App />} ></Route>
         <Route path="/register" element={<Register />} ></Route>
         <Route path="/login" element={<Login />} ></Route>
+        <Route path="/extract" element={<Extract />} ></Route>
       
       </Routes>
     
