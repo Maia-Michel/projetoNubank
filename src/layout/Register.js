@@ -129,7 +129,7 @@ const handleSubmit = (event) => {
           <fieldset>
             <label>
               <input type="checkbox" name='aceito_contrato' id='aceito_contrato' ></input>
-              Eu li, estou ciente das condições de tratamento dos meus dados pessoais e dou meu consentimento, quando aplicável, conforme descrito nesta 
+              Eu li, estou ciente das condições de tratamento dos meus dados pessoais e dou meu consentimento, quando aplicável, conforme descrito nesta <a href="#"> Política de Privacidade.</a>
             </label>
           </fieldset>
 
